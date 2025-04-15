@@ -7,3 +7,9 @@ input {
   padding: 10px;
   font-size: 16px;
 }
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-left: 5px;
+  cursor:crosshair;
+}
