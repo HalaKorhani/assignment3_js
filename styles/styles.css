@@ -26,3 +26,7 @@ li {
   cursor: pointer;
   transition: 0.3s ease;
 }
+li.completed {
+  text-decoration:overline;
+  color: rgb(226, 74, 74);
+}
