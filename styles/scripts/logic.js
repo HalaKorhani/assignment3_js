@@ -17,4 +17,11 @@ function generateReports(students) {
     if (average >= 60) return "D";
     return "F";
   }
+class Bankaccount{
+  constructor(ownerName, initialBalance){
+    this.ownerName=ownerName;
+    this.initialBalance=initialBalance;
+    this.history=[];
+  }
 
+}
