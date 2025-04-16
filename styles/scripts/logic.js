@@ -56,7 +56,13 @@ class Bankaccount{
     console.log(`Transaction history for ${this.ownerName}:`);
     this.history.forEach(entry => console.log("- " + entry));
   }
-  
 
+  function addTask() {
+    const input = document.getElementById("taskInput");
+    const taskText = input.value.trim();
+    if (taskText === "") return;
+  }
   
 }
+  
+
