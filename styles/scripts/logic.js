@@ -52,6 +52,11 @@ class Bankaccount{
   getSummary() {
     return `${this.ownerName}'s balance is $${this.balance}`;
   }
+  printHistory() {
+    console.log(`Transaction history for ${this.ownerName}:`);
+    this.history.forEach(entry => console.log("- " + entry));
+  }
   
+
   
 }
