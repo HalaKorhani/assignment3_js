@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Assignment3</title>
+  <title>Task list</title>
   <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
-  <h1>Assignmet </h1>
+  <div class="container">
+  <h1>task list  </h1>
+  <div class="input-group">
+    <input  class="task-input"type="text">
+  </div>
 
   <input type="text" id="taskInput" placeholder="Enter a task" />
-  <button id="addTaskBtn">Add Task</button>
+  <button class="add-btn">Add Task</button>
+  </div>
   <ul id="taskList"></ul>
+</div>
 
   <script src="styles/scripts/logic.js"></script>
 </body>
