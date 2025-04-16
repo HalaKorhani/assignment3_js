@@ -36,5 +36,18 @@ class Bankaccount{
     this.balance -= amount;
     this.history.push(`Withdrew $${amount}`);
   }
+  transferTo(anotherAccount, amount) {
+    if (amount > this.balance) {
+      this.history.push(`Attempted transfer of $${amount} to ${anotherAccount.ownerName} (Failed)`);
+      console.log("Transfer failed: insufficient funds.");
+      return;
+    }
+  
+    this.withdraw(amount);             
+    anotherAccount.deposit(amount);    
+  
+    this.history.push(`Transferred $${amount} to ${anotherAccount.ownerName}`);
+    anotherAccount.history.push(`Received $${amount} from ${this.ownerName}`);
+  }
   
 }
