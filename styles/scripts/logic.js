@@ -9,3 +9,12 @@ function generateReports(students) {
       student.scores.reduce((sum, score) => sum + score, 0) / student.scores.length
     )});
   }
+ 
+  function getGrade(average) {
+    if (average >= 90) return "A";
+    if (average >= 80) return "B";
+    if (average >= 70) return "C";
+    if (average >= 60) return "D";
+    return "F";
+  }
+
