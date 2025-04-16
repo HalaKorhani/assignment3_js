@@ -3,22 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Task list</title>
+  <title>Task List & Bank Account</title>
   <link rel="stylesheet" href="styles/styles.css" />
+  
 </head>
 <body>
   <div class="container">
-  <h1>task list  </h1>
-  <div class="input-group">
-    <input  class="task-input"type="text">
-  </div>
+   
+    <h1>Task List</h1>
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Enter a task" />
+<ul id="taskList"></ul>
 
-  <input type="text" id="taskInput" placeholder="Enter a task" />
-  <button class="add-btn">Add Task</button>
-  </div>
-  <ul id="taskList"></ul>
-</div>
+    </div>
+    <button class="add-btn">Add Task</button>
 
-  <script src="styles/scripts/logic.js"></script>
+    
+    <ul id="taskList" class="task-list"></ul>
+
+  
+    <h2>Bank Account</h2>
+    <div>
+      <label for="depositAmount">Deposit Amount:</label>
+      <input type="number" id="depositAmount" />
+      <button class="deposit-btn">Deposit</button>
+    </div>
+
+    <div>
+      <label for="withdrawAmount">Withdraw Amount:</label>
+      <input type="number" id="withdrawAmount" />
+      <button class="withdraw-btn">Withdraw</button>
+    </div>
+
+    <div>
+      <label for="transferAmount">Transfer Amount:</label>
+      <input type="number" id="transferAmount" />
+      <label for="transferAccount">Transfer To (Account Name):</label>
+      <input type="text" id="transferAccount" />
+      <button class="transfer-btn">Transfer</button>
+    </div>
+
+    <h3 id="balance">Balance: $0</h3>
+    <button id="showHistoryBtn">Show Transaction History</button>
+    <ul id="transactionHistory"></ul>
+  </div>
 </body>
+<script src="logic.js"></script>
 </html>

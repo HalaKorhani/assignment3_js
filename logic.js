@@ -8,7 +8,7 @@ function generateReports(students) {
     const average = Math.round(
       student.scores.reduce((sum, score) => sum + score, 0) / student.scores.length
     )});
-  }
+  } // the time complexity is O(n) we have an array
  
   function getGrade(average) {
     if (average >= 90) return "A";
@@ -20,7 +20,7 @@ function generateReports(students) {
 class Bankaccount{
   constructor(ownerName, initialBalance){
     this.ownerName=ownerName;
-    this.initialBalance=initialBalance;
+    this.initialBalance = initialBalance; //O(1)
     this.history=[];
   }
   deposit(amount) {
@@ -51,26 +51,64 @@ class Bankaccount{
   }
   getSummary() {
     return `${this.ownerName}'s balance is $${this.balance}`;
-  }
+  } // all above methods have time complexity of O(1)
   printHistory() {
     console.log(`Transaction history for ${this.ownerName}:`);
-    this.history.forEach(entry => console.log("- " + entry));
+    this.history.forEach(entry => console.log("- " + entry)); //O(n)
   }
-
-  function addTask() {
-    const input = document.getElementById("taskInput");
-    const taskText = input.value.trim();
-    if (taskText === "") return;
   
-  const li = document.createElement("li");
-      li.textContent = taskText;
 
-      li.addEventListener("click", () => {
-        li.classList.toggle("completed");
-      });
-      document.getElementById("taskList").appendChild(li);
-      input.value = "";
+ 
 
 }
+ // Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const addBtn = document.querySelector(".add-btn");
+
+  // Add the event listener to the 'Add Task' button
+  if (addBtn) {
+    addBtn.addEventListener("click", addTask);
+  }
+});
+
+
+function addTask() {
+ 
+  const input = document.getElementById("taskInput");
+  const taskText = input.value.trim(); // O(n)
+
+ 
+  if (taskText === "") return;
+
   
+  const li = document.createElement("li");
+  li.textContent = taskText;
+
+
+  li.addEventListener("click", () => {
+    li.classList.toggle("completed"); // O(1)
+  });
+
+
+  document.getElementById("taskList").appendChild(li); // O(1)
+
+ 
+  input.value = "";
+}
+
+
+
+const reports = generateReports(students);
+console.log("Student Reports:", reports);
+
+
+const tahaAccount = new Bankaccount("Taha", 1000);
+const mariaAccount = new Bankaccount("Maria", 500);
+
+tahaAccount.deposit(200);
+tahaAccount.withdraw(100);
+tahaAccount.transferTo(mariaAccount, 300);
+
+console.log(tahaAccount.getSummary());
+tahaAccount.printHistory();
 
