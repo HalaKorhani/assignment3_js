@@ -64,10 +64,12 @@ class Bankaccount{
   
   const li = document.createElement("li");
       li.textContent = taskText;
-      
+
       li.addEventListener("click", () => {
         li.classList.toggle("completed");
       });
+      document.getElementById("taskList").appendChild(li);
+      input.value = "";
 
 }
   
