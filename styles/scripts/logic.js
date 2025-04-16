@@ -49,5 +49,9 @@ class Bankaccount{
     this.history.push(`Transferred $${amount} to ${anotherAccount.ownerName}`);
     anotherAccount.history.push(`Received $${amount} from ${this.ownerName}`);
   }
+  getSummary() {
+    return `${this.ownerName}'s balance is $${this.balance}`;
+  }
+  
   
 }
